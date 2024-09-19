@@ -6,9 +6,17 @@ for (let i = 0; i < 16 * 16; i++) {
   container.appendChild(gridItem);
 }
 
+function getRandomColor() {
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+  return `rgb(${r}, ${g}, ${b})`;
+}
+
+
 container.addEventListener("mouseover", function (e) {
   if (e.target.classList.contains("gridItem")) {
-    e.target.style.backgroundColor = "pink";
+    e.target.style.backgroundColor = getRandomColor();
   }
 });
 container.addEventListener("mouseout", function (e) {
